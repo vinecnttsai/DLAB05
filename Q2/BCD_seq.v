@@ -10,7 +10,7 @@
 
   Modules Used:
     - fq_div: Frequency divider that converts 100 MHz input clock to 1 Hz
-    - cnt_4bit: 4-bit up/down counter (parameterized with Max=15, Min=0)
+    - cnt_4b: 4-bit up/down counter (parameterized with Max=15, Min=0)
     - svn_dcdr: 7-segment decoder with digit selection and decimal point control
 
   Ports:
@@ -68,7 +68,7 @@ wire [3:0] cnt;
     .div_n_clk(clk)
 );
 
-(* keep_hierarchy = "yes" *)cnt_4bit #(.Max(15), .Min(0)) cnt_9 (
+(* keep_hierarchy = "yes" *)cnt_4b #(.Max(15), .Min(0)) cnt_9 (
     .clk(clk),
     .rst_n(sys_rst_n),
     .U_D(U_D),
