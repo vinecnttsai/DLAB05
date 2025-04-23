@@ -1,10 +1,10 @@
 /*
-//  A 4-bits Full Adder
+//  A N-bits Full Adder
 //  Design method: gate-level
-//  input: 4-bits augend (a),
-//         4-bits addend (b), 
+//  input: N-bits augend (a),
+//         N-bits addend (b), 
 //         1-bits carry-in
-//  output: 4-bits sum,
+//  output: N-bits sum,
 //         1-bits carry-out         
 */
 
