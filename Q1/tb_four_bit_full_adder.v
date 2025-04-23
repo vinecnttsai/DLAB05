@@ -6,8 +6,8 @@
     It applies all possible combinations of 4-bit augend (a), 4-bit addend (b),
     and 1-bit carry-in (cin), totaling 16 x 16 x 2 = 512 test cases.
     For each input combination, the testbench calculates the expected result
-    and compares it to the output from the 4-bits adder.
-    Any mismatch between the 4-bits adder's output and the expected result is reported.
+    and compares it to the output from the 4-bit full adder adder.
+    Any mismatch between the 4-bit adder's output and the expected result is reported.
 
   4-bits Adder:
     Inputs:
@@ -41,7 +41,7 @@ module tb_adder();
   wire       cout;
 
 
-  adder uut1 (
+  four_bit_full_adder uut1 (
     .a(a),
     .b(b),
     .cin(cin),
