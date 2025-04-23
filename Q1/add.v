@@ -1,3 +1,13 @@
+/*
+//  A 4-bits Full Adder
+//  Design method: gate-level
+//  input: 4-bits augend (a),
+//         4-bits addend (b), 
+//         1-bits carry-in
+//  output: 4-bits sum,
+//         1-bits carry-out         
+*/
+
 module add #(parameter N = 4) (input [N - 1:0] a, input [N - 1:0] b, input cin,  output [N - 1:0] sum, output cout);
    
     wire [N - 1:0] carry_chain;
