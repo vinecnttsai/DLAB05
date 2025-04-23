@@ -1,3 +1,13 @@
+/*
+//  A 4-bits Full Adder
+//  Design method: gate-level
+//  input: 4-bits augend (a),
+//         4-bits addend (b), 
+//         1-bits carry-in
+//  output: 4-bits sum,
+//         1-bits carry-out         
+*/
+
 module adder(
   input [3:0] a,
   input [3:0] b,
