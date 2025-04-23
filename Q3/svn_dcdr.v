@@ -1,21 +1,26 @@
-/* 
-//  A seven-segment display decoder
-//  Design method: behavior
-//  Displays decimal numbers from 0 to 9, including the decimal point
-//  Inputs from 1010 to 1111 will turn off the display (go dark)
-//  Common anode type: set LOW to illuminate the LED segment
-*/
-
-/*  7 segment display pinout
-//    |--CA--|
-//    CF     CB
-//    |--CG--|
-//    CE     CC
-//    |--CD--|  DP
-*/
-
 /*
-//  set AN to LOW to enable the digit
+  7-Segment Display Decoder (Gate-Level BCD to 7-segment)
+  -------------------------------------------------------
+
+  Description:
+    This module decodes a 4-bit Binary Coded Decimal (BCD) input to drive a 7-segment display.
+    It outputs the control signals for segments A to G and the decimal point (DP).
+    The module is implemented at the gate level using basic logic gates (AND, OR, NOT).
+
+  Inputs:
+    - in    : 4-bit BCD input (0 to 9).
+    - dp_in : 1-bit input for decimal point control (active low).
+  
+  Outputs:
+    - CA to CG : Control signals for segments A to G of the 7-segment display.
+    - DP       : Decimal point control (active low).
+    - AN       : 8-bit control to enable the correct digit in a common anode display.
+
+  Functionality:
+    - Decodes the 4-bit BCD input to drive the 7-segment display.
+    - Outputs are generated using gate-level logic (AND, OR, NOT).
+    - DP is controlled by dp_in, with inversion for active-low configuration.
+    - AN enables the display, defaulting to the first digit.
 */
 
 module svn_dcdr (
