@@ -4,8 +4,8 @@
 
   Description:
     A 4-bit counter that counts up or down based on the `U_D` signal.
-    The counter wraps around when reaching the specified maximum or minimum.
-    The count direction is sampled on the falling edge of the clock and
+    The counter wraps around when reaching maximum or minimum.
+    The count direction is sampled on the rising edge of the clock and
     stored in an internal direction register (`dir`), providing synchronized direction control.
 
   Parameters:
@@ -22,7 +22,7 @@
 
   Internal Registers:
     - cnt : Holds the current count value
-    - dir : Latches the direction on the falling edge of the clock
+    - dir : Latches the direction on the rising edge of the clock
 
   Behavior:
     - On reset, counter initializes to 0 and direction is set to count down (dir = 0).
@@ -30,7 +30,6 @@
         * If counting up and `cnt == Max`, wrap to `Min`.
         * If counting down and `cnt == Min`, wrap to `Max`.
         * Otherwise, increment or decrement based on `dir`.
-    - On falling clock edge:
         * Latch the current `U_D` value into `dir`.
 
 */
@@ -55,7 +54,7 @@ reg dir;
         end
     end
 
-    always @(negedge clk or negedge rst_n) begin
+  always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             dir <= 1'b0;
         end else begin
