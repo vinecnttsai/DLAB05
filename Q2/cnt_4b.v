@@ -1,4 +1,4 @@
-module cnt_4bits #(parameter Max = 15, parameter Min = 0)(
+module cnt_4b #(parameter Max = 15, parameter Min = 0)(
     input clk,
     input rst_n,
     input U_D,
