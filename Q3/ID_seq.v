@@ -1,3 +1,34 @@
+/*
+  ID Sequence Display Controller (Hierarchical BCD to 7-segment System)
+  ---------------------------------------------------------------------
+
+  Description:
+    This top-level module displays a fixed 16-digit hexadecimal ID on a 7-segment display.
+    It integrates multiple gate- and RTL-level modules:
+      - Frequency Divider
+      - 4-bit Up/Down Counter
+      - ID Slicer
+      - Gate-level BCD to 7-Segment Decoder
+
+  Functionality:
+    - The 64-bit ID is sliced into 4-bit segments based on a 4-bit counter.
+    - The counter increments or decrements based on U_D signal.
+    - Each 4-bit slice is decoded into 7-segment signals (CA to CG).
+    - DP (decimal point) is controlled via dp_in.
+    - Only one digit is enabled at a time via AN[7:0].
+
+  Inputs:
+    - clk100M   : 100 MHz system clock.
+    - sys_rst_n : Active-low system reset.
+    - dp_in     : Decimal point control (active low).
+    - U_D       : Up/Down count control.
+
+  Outputs:
+    - CA to CG  : Segment controls for the 7-segment display.
+    - DP        : Decimal point control.
+    - AN[7:0]   : Digit enable signals for 8-digit common anode display.
+*/
+
 module ID_seq (
     input clk100M,
     input sys_rst_n,
