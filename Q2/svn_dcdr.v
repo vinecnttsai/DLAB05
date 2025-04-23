@@ -21,10 +21,6 @@
     - Outputs are generated using gate-level logic (AND, OR, NOT).
     - DP is controlled by dp_in, with inversion for active-low configuration.
     - AN enables the display, defaulting to the first digit.
-
-  Assumptions:
-    - BCD input is within the range 0-9.
-    - Display is common anode (segments turn on with a low signal).
 */
 
 module svn_dcdr (
