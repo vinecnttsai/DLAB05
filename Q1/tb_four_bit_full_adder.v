@@ -54,7 +54,7 @@ module tb_adder();
   reg [4:0] expected;
 
   initial begin
-    $display("Starting exhaustive test for 4-bit full adder...");
+    $display("Starting test for 4-bit full adder...");
 
     for (i = 0; i < 16; i = i + 1) begin
       for (j = 0; j < 16; j = j + 1) begin
